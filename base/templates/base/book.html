@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Appointment Form</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+	</head>
+	<body class="bg-[#F3E8FF]">
+		<nav class="bg-teal-600 text-white flex justify-evenly items-center py-4 px-5">
+			<h1 class=" ml-[5%] text-xl font-bold">TeamMed Multinational Hospital</h1>
+			<ul class="flex space-x-10 text-white">
+				<li>
+					<a href="{% url 'index' %}">Home</a>
+				</li>
+				<li>
+					<a href="{% url 'dep' %}">Department</a>
+				</li>
+				<li>
+					<a href="{% url 'doc' %}">Doctors</a>
+				</li>
+				<li>
+					<a href="{% url 'book' %}">Booking</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="min-h-screen flex items-center justify-center">
+			<div class="bg-white p-8 shadow-md rounded-md max-w-md w-full">
+				<h1 class="text-2xl font-bold mb-6">Appointment Form</h1>
+				<form action="" method="POST">
+					{% csrf_token %}
+					{{form.as_p}}"
+					<div class="mb-6">
+						<button type="submit" class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors duration-300">Submit</button>
+					</div> 
+				</form>
+			</div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Genos:wght@300&display=swap" rel="stylesheet">
+    <title>TeamMed</title>
+  </head>
+  <style>
+      html{
+      scroll-behavior: smooth;
+      width: 100%;
+      }
+  </style>
+  <body class="bg-[#F3E8FF]">
+    <nav class="bg-teal-600 text-white flex justify-evenly items-center py-4 px-5">
+      <h1 class=" ml-[5%] text-xl font-bold">TeamMed Multinational Hospital</h1>
+      <ul class="flex space-x-10 text-white">
+        <li>
+          <a href="{% url 'index' %}">Home</a>
+        </li>
+        <li>
+          <a href="{% url 'dep' %}">Department</a>
+        </li>
+        <li>
+          <a href="{% url 'doc' %}">Doctors</a>
+        </li>
+        <li>
+          <a href="{% url 'book' %}">Booking</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="relative">
+      <ul id="slider">
+        <li class=" ">
+          <div class="ml-[5%] mt-[1%] ">
+            <img class="h-full object-cover" src="{% static 'images/home (1).jpg' %}">
+          </div>
+        </li>
+        <li class="h-[64vh] relative hidden">
+          <div class="ml-[5%] mt-[1%] ">
+            <img class="h-full object-cover" src="{% static 'images/home (2).jpg' %}">
+          </div>
+        </li>
+        <li class="h-[64vh] relative hidden">
+          <div class="ml-[5%] mt-[1%] ">
+            <img class="h-full object-cover" src="{% static 'images/home (3).jpg' %}">
+          </div>
+        </li>
+      </ul>
+      <div class="absolute px-7 flex h-[77%] w-[92%] top-0 left-10   ">
+        <div class="my-auto w-full flex justify-between">
+          <button onclick="prev()" class="bg-black p-1 rounded-full bg-opacity-40">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="40" height="40" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <line x1="5" y1="12" x2="11" y2="18" />
+              <line x1="5" y1="12" x2="11" y2="6" />
+            </svg>
+          </button>
+          <button onclick="next()" class="bg-black p-1 rounded-full bg-opacity-40">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="40" height="40" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <line x1="13" y1="18" x2="19" y2="12" />
+              <line x1="13" y1="6" x2="19" y2="12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <h1 class=" mt-[2%] ml-[5%] text-6xl font-bold text-blue-500">MY FELLOW INDIANS,</h1>
+    <p class="font-dmserif text-l mt-[1%] ml-[5%] text-black">
+      Today is a landmark day for TeamMed as we complete 39 years of dedicated patient care. Over the years TeamMed has been he pioneer of healthcare in India, and we are humbled by the love and trust placed in us by over 200 million patients and their families. It has motivated us to put in tireless efforts and remain unwavering in our commitment to bring you the best healthcare in the world.
+      <br>As we enter our 40th year, I want to re-affirm this commitment - TeamMed will always bring you the best healthcare in the world, no matter what. This is our mission. Today with over 10,000 beds, 400 clinics, 5,000 pharmacies and our 24/7 digital channel, we bring the best, most comprehensive omnichannel care to you wherever you are and whenever<br>you need it.
+      <br>We have the best doctors and the most care-focused teams coupled with the most advanced equipment, cutting-edge treatments and technologies, including Proton therapy, robotic surgeries, artificial intelligence and more. These ensure we can get you healthy quickly so you can get back to leading a happy and fulfilling life.
+    </p>
+    <div class="relative">
+      <img class=" w-[30%] h-[5%] mt-[3%] ml-[5%]" src="{% static 'images/telemedicine.jpg' %}">
+      <div class="absolute  top-0 left-[38%]">
+        <h1 class=" text-xl font-bold text-red-400 mt-[2%]">EASY - SAFE - AFFORDABLE</h1>
+        <h1 class=" text-4xl font-bold text-blue-500 mt-[2%]">Telemedicine</h1>
+        <p class="font-dmserif text-xl  text-black mt-[2%]">TeamMed Telemedicine Services - Healthcare from the comfort of your home town.<br>
+        Telemedicine is a service which can help a patient/ doctor/ hospital in a remote<br>location to consult with a Super Specialist at TeamMed Hospital.</p>
+      </div>
+      <img class=" w-[30%] h-[5%] mt-[5%] ml-[60%]" src="{% static 'images/international.jpg' %}">
+      <div class="absolute  top-[55%] left-[5%]">
+        <h1 class=" text-xl font-bold text-red-400 mt-[2%]">INTERNATIONAL</h1>
+        <h1 class=" text-4xl font-bold text-blue-500 mt-[2%]">International Patients</h1>
+        <p class="font-dmserif text-xl  text-black mt-[2%]">The International Patient Care Helpdesk at Rajagiri Hospital functions as a<br>single-window to all the services offered at Rajagiri Hospital. From registration<br>to discharge, our team will help you move seamlessly between the clinical<br>departments to offer you the best of medical care with strict infection control<br>practices.</p>
+      </div>
+    </div>
+    <h1 class=" text-xl font-bold text-red-400 mt-[2%] ml-[5%]">Our Service</h1>
+    <div class="flex flex-row flex-wrap justify-evenly m-10 mb-2 ">
+      <img class=" w-[30%] h-[5%] mt-[2%] ml-[4%]" src="{% static 'images/diagnostic lab.jpg' %}">
+      <img class=" w-[30%] h-[5%] mt-[2%]" src="{% static 'images/mammo.jpg' %}">
+      <img class=" w-[30%] h-[5%] mt-[2%]" src="{% static 'images/pet ct.png' %}">
+    </div>
+    <div class="flex flex-row flex-wrap justify-evenly m-2 mt-[1%]">
+      <p class="font-dmserif text-xl text-black mt-[2%] ml-[1%]">DIAGNOSTIC LABS</p>
+      <p class="font-dmserif text-xl text-black mt-[2%] ml-[1%]">MAMMOGRAPHY</p>
+      <p class="font-dmserif text-xl text-black mt-[2%] ml-[5%]">PET CT</p>
+    </div>
+    <div class="flex flex-row flex-wrap justify-evenly m-10 mb-2 ">
+      <img class=" w-[30%] h-[5%] mt-[3%] ml-[5%]" src="{% static 'images/radiation.jpg' %}">
+      <img class=" w-[30%] h-[5%] mt-[3%]" src="{% static 'images/slice.jpg' %}">
+      <img class=" w-[30%] h-[5%] mt-[3%]" src="{% static 'images/tesla.jpg' %}">
+    </div>
+    <div class="flex flex-row flex-wrap justify-evenly m-2 mt-[1%]">
+      <p class="font-dmserif text-xl text-black mt-[2%] ml-[8%]">RADIATION THERAPY</p>
+      <p class="font-dmserif text-xl text-black mt-[2%] ml-[7%]">128 SLICE CT SCANNER</p>
+      <p class="font-dmserif text-xl text-black mt-[2%] ml-[10%]">3 TESLA MRI SCANNER</p>
+    </div>
+
+    <nav class="bg-teal-600 text-white py-4 px-5 mt-[2%] " id="support">
+      <ul class="flex space-x-10 text-gray-300">
+        <div class="flex flex-col ml-[10%]">
+          <h1 class=" text-l font-bold">Support Services</h1>
+          <li>
+            <a href="">Emergency Services<br>Intensive Care Units<br>Operation Theatres<br>Rehabilitation<br>Diagnostics & Blood Bank<br>Pharmacy<br>Clinical Nutrition & Dietetics<br>Pre-Employment Check-Up</a>
+          </li>
+        </div>
+        <div class="flex flex-col ">
+          <h1 class=" text-l font-bold">Links</h1>
+          <li>
+            <a href="">Departments<br>Doctors<br>Second Opinion<br>Careers<br>News And Events<br>Blogs</a>
+          </li>
+        </div>
+        <div class="flex flex-col ">
+          <h1 class=" text-l font-bold">Contact Us</h1>
+          <li>
+            <a href="">Facebook<br>Twitter<br>YouTube</a>
+          </li>
+        </div>  
+        <div class="flex flex-col ">
+          <h1 class=" text-l font-bold">Mail Us:</h1>
+          <li>
+            <a href="">TeamMed@gmail.com<br> <h1 class=" text-l font-bold">Telephone:</h1>0123-456789</a>
+          </li>
+        </div>
+        <div class="flex flex-col ">
+          <h1 class=" text-l font-bold">Registered Office Address:</h1>
+          <li>
+            <a href="">TeamMed Multinational Hospital,<br>ABCD Embassy Road,<br> ABCD Junction, Palakkad, 123456,<br>Kerala, India</a>
+          </li>
+        </div>
+      </ul>
+    </nav>
+
+    
+    <script src="{% static 'js/slide.js' %}"></script>
+  </body>
+</html>

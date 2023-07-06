@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Genos:wght@300&display=swap" rel="stylesheet">
+    <title>TeamMed</title>
+  </head>
+  <style>
+      html{
+      scroll-behavior: smooth;
+      width: 100%;
+      }
+  </style>
+    <body class="bg-[#F3E8FF]">
+        <nav class="bg-teal-600 text-white flex justify-evenly items-center py-4 px-5">
+        <h1 class=" ml-[5%] text-xl font-bold">TeamMed Multinational Hospital</h1>
+            <ul class="flex space-x-10 text-white">
+                <li>
+                    <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'dep' %}">Department</a>
+                </li>
+                <li>
+                    <a href="{% url 'doc' %}">Doctors</a>
+                </li>
+                <li>
+                    <a href="{% url 'book' %}">Booking</a>
+                </li>
+            </ul>
+        </nav>
+        <h1 class=" mt-[2%] mb-[3%] ml-[5%] text-6xl font-bold text-blue-500">Booking Confirmation</h1>
+      
+        <div class="mx-auto w-50 bg-green-300 text-center text-black p-12 my-5 border border-warning rounded ">  
+            <p> We have received your request, Our representative will contact you shortly Thank You</p>
+        </div>
+       
+        <nav class="bg-teal-600 text-white py-4 px-5 mt-[8%] " id="support">
+            <ul class="flex space-x-10 text-gray-300">
+                <div class="flex flex-col ml-[10%]">
+                    <h1 class=" text-l font-bold">Support Services</h1>
+                    <li>
+                        <a href="">Emergency Services<br>Intensive Care Units<br>Operation Theatres<br>Rehabilitation<br>Diagnostics & Blood Bank<br>Pharmacy<br>Clinical Nutrition & Dietetics<br>Pre-Employment Check-Up</a>
+                    </li>
+                </div>
+                <div class="flex flex-col ">
+                    <h1 class=" text-l font-bold">Links</h1>
+                    <li>
+                        <a href="">Departments<br>Doctors<br>Second Opinion<br>Careers<br>News And Events<br>Blogs</a>
+                    </li>
+                </div>
+                <div class="flex flex-col ">
+                    <h1 class=" text-l font-bold">Contact Us</h1>
+                    <li>
+                        <a href="">Facebook<br>Twitter<br>YouTube</a>
+                    </li>
+                </div>  
+                <div class="flex flex-col ">
+                    <h1 class=" text-l font-bold">Mail Us:</h1>
+                    <li>
+                        <a href="">TeamMed@gmail.com<br> <h1 class=" text-l font-bold">Telephone:</h1>0123-456789</a>
+                    </li>
+                </div>
+                <div class="flex flex-col ">
+                    <h1 class=" text-l font-bold">Registered Office Address:</h1>
+                    <li>
+                        <a href="">TeamMed Multinational Hospital,<br>ABCD Embassy Road,<br> ABCD Junction, Palakkad, 123456,<br>Kerala, India</a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </body>
+</html>
